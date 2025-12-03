@@ -51,7 +51,6 @@ trunc_est <- function(x,
   init_fcn <- function() list(mean = mu_start, sd = sigma_start)
 
   stan_fit <- rstan::sampling(stanmodels$trunc_est,
-                              cores = 1,
                               init = init_fcn,
                               data = list(n = length(x), a = a, b = b, y = x),
                               ...)
